@@ -6,11 +6,11 @@ import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import ru.maxultra.developerslife.ui.gifpage.PageFragment
 
-private const val PAGE_COUNT = 4
+private const val PAGE_COUNT = 3
 
 class PagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
     override fun getItemCount(): Int = PAGE_COUNT
 
-    override fun createFragment(position: Int): Fragment = PageFragment()
+    override fun createFragment(position: Int): Fragment = PageFragment.newInstance(position)
 }
