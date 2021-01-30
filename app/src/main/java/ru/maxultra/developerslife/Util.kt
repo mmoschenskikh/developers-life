@@ -15,11 +15,16 @@ fun getTabText(position: Int, resources: Resources): String {
     }
 }
 
+private lateinit var loadingDrawable: Drawable
+
 fun getLoadingDrawable(context: Context): Drawable {
-    val drawable = CircularProgressDrawable(context)
-    drawable.centerRadius = 40f
-    drawable.strokeWidth = 10f
-    drawable.setColorSchemeColors(context.getColor(R.color.peter_river))
-    drawable.start()
-    return drawable
+    if (!::loadingDrawable.isInitialized) {
+        val drawable = CircularProgressDrawable(context)
+        drawable.centerRadius = 40f
+        drawable.strokeWidth = 10f
+        drawable.setColorSchemeColors(context.getColor(R.color.peter_river))
+        drawable.start()
+        loadingDrawable = drawable
+    }
+    return loadingDrawable
 }
