@@ -1,9 +1,10 @@
-package ru.maxultra.developerslife
+package ru.maxultra.developerslife.ui.tablayout
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import ru.maxultra.developerslife.ui.gifpage.PageFragment
 
 private const val PAGE_COUNT = 4
 
