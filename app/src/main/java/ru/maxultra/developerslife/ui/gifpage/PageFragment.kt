@@ -26,6 +26,7 @@ class PageFragment : Fragment() {
         )
         binding.viewModel = viewModel
 
+        binding.gifImageView.clipToOutline = true
         binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
     }
