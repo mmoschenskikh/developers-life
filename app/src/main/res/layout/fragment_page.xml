@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="ru.maxultra.developerslife.ui.gifpage.PageViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -16,11 +23,12 @@
             android:layout_marginEnd="@dimen/margin_large"
             android:layout_marginBottom="@dimen/margin_medium"
             android:foreground="@drawable/gradient"
+            app:imageUrl="@{viewModel.gif.url}"
             app:layout_constraintBottom_toTopOf="@+id/next_button"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
             tools:src="@tools:sample/backgrounds/scenic" />
 
         <ImageButton
@@ -60,7 +68,7 @@
             android:layout_marginEnd="@dimen/margin_small"
             android:layout_marginBottom="@dimen/margin_small"
             android:fontFamily="@font/roboto"
-            android:text=""
+            android:text="@{viewModel.gif.title}"
             android:textAlignment="textStart"
             android:textColor="@android:color/white"
             android:textSize="16sp"

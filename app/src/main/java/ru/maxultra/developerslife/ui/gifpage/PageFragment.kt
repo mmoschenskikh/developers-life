@@ -11,6 +11,11 @@ import ru.maxultra.developerslife.R
 import ru.maxultra.developerslife.databinding.FragmentPageBinding
 
 class PageFragment : Fragment() {
+
+    private val viewModel: PageViewModel by lazy {
+        ViewModelProvider(this).get(PageViewModel::class.java)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -19,6 +24,9 @@ class PageFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentPageBinding>(
             inflater, R.layout.fragment_page, container, false
         )
+        binding.viewModel = viewModel
+
+        binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
     }
 }
