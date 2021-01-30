@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="random">Случайные</string>
+    <string name="latest">Последние</string>
+    <string name="hot">Горячие</string>
+    <string name="top">Лучшие</string>
+</resources>

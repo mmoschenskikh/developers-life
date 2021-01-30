@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Developers Life</string>
+    <string name="app_name" translatable="false">Developers Life</string>
     <string name="random">Random</string>
     <string name="latest">Latest</string>
     <string name="hot">Hot</string>
