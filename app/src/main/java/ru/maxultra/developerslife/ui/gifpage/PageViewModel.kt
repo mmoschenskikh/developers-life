@@ -22,6 +22,8 @@ class PageViewModel : ViewModel() {
     private val position = MutableLiveData<Int>()
 
     val prevEnabled: LiveData<Boolean> = Transformations.map(position) { pos -> pos != 0 }
+    val nextClickable: LiveData<Boolean> =
+        Transformations.map(status) { status -> status != GifApiStatus.LOADING }
 
     init {
         getGifPost()
@@ -43,7 +45,8 @@ class PageViewModel : ViewModel() {
 
     fun onNext() {
         position.value = position.value?.plus(1) ?: previousGifs.size - 1
-        if (position.value == previousGifs.size) {
+        if (position.value!! > previousGifs.size) return
+        if (position.value!! == previousGifs.size) {
             getGifPost()
         } else {
             _gif.value = previousGifs[position.value!!]
