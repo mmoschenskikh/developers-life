@@ -27,10 +27,13 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
-            app:tabTextAppearance="@style/TabLayoutTextAppearance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabMode="fixed" />
+            app:tabIndicatorColor="@color/peter_river"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/peter_river"
+            app:tabTextAppearance="@style/TabLayoutTextAppearance"
+            app:tabTextColor="@color/black" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/view_pager"
