@@ -2,7 +2,7 @@
 <resources>
 
     <style name="RoundIconButton">
-        <item name="android:background">@drawable/circle</item>
+        <item name="android:background">@drawable/navigation_button_selector</item>
         <item name="android:elevation">10dp</item>
     </style>
 
