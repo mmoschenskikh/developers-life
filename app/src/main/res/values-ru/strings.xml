@@ -4,4 +4,6 @@
     <string name="latest">Последние</string>
     <string name="hot">Горячие</string>
     <string name="top">Лучшие</string>
+    <string name="network_error">Ошибка при загрузке данных. Проверьте подключение к сети.</string>
+    <string name="try_again">Повторить</string>
 </resources>

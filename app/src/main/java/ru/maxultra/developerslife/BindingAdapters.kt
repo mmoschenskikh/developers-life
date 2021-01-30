@@ -1,10 +1,12 @@
 package ru.maxultra.developerslife
 
+import android.view.View
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import ru.maxultra.developerslife.ui.gifpage.GifApiStatus
 
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
@@ -19,5 +21,21 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
             )
             .load(imgUri)
             .into(imgView)
+    }
+}
+
+@BindingAdapter("errorStatus")
+fun bindStatusError(errorView: View, status: GifApiStatus?) {
+    when (status) {
+        GifApiStatus.ERROR -> errorView.visibility = View.VISIBLE
+        else -> errorView.visibility = View.GONE
+    }
+}
+
+@BindingAdapter("correctStatus")
+fun bindStatusCorrect(correctView: View, status: GifApiStatus?) {
+    when (status) {
+        GifApiStatus.ERROR -> correctView.visibility = View.GONE
+        else -> correctView.visibility = View.VISIBLE
     }
 }

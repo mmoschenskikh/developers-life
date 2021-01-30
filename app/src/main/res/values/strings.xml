@@ -4,4 +4,6 @@
     <string name="latest">Latest</string>
     <string name="hot">Hot</string>
     <string name="top">Top</string>
+    <string name="network_error">Error while loading data. Check your Internet connection.</string>
+    <string name="try_again">Try again</string>
 </resources>

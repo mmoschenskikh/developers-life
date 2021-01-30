@@ -21,13 +21,13 @@ class PageViewModel : ViewModel() {
 
     private val position = MutableLiveData<Int>()
 
-    val prevEnabled: LiveData<Boolean> = Transformations.map(position) { pos -> pos != 0 }
+    val prevEnabled: LiveData<Boolean> = Transformations.map(position) { pos -> pos > 0 }
     val nextClickable: LiveData<Boolean> =
         Transformations.map(status) { status -> status != GifApiStatus.LOADING }
 
     init {
+        position.value = -1
         getGifPost()
-        position.value = 0
     }
 
     private fun getGifPost() {
@@ -36,6 +36,7 @@ class PageViewModel : ViewModel() {
             try {
                 _gif.value = GifApi.retrofitService.getRandomImage()
                 gif.value?.let { previousGifs.add(it) }
+                position.value = position.value!! + 1
                 _status.value = GifApiStatus.DONE
             } catch (e: Exception) {
                 _status.value = GifApiStatus.ERROR
@@ -43,12 +44,15 @@ class PageViewModel : ViewModel() {
         }
     }
 
+    fun onReload() {
+        getGifPost()
+    }
+
     fun onNext() {
-        position.value = position.value?.plus(1) ?: previousGifs.size - 1
-        if (position.value!! > previousGifs.size) return
-        if (position.value!! == previousGifs.size) {
+        if (position.value!! + 1 == previousGifs.size) {
             getGifPost()
         } else {
+            position.value = position.value!! + 1
             _gif.value = previousGifs[position.value!!]
         }
     }
