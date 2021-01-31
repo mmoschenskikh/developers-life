@@ -1,9 +1,10 @@
-package ru.maxultra.developerslife
+package ru.maxultra.developerslife.util
 
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
+import ru.maxultra.developerslife.R
 
 fun getTabText(position: Int, resources: Resources): String {
     return when (position) {

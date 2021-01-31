@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import com.google.android.material.tabs.TabLayoutMediator
 import ru.maxultra.developerslife.databinding.ActivityMainBinding
 import ru.maxultra.developerslife.ui.tablayout.PagerAdapter
+import ru.maxultra.developerslife.util.getTabText
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

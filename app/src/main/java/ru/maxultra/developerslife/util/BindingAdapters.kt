@@ -1,4 +1,4 @@
-package ru.maxultra.developerslife
+package ru.maxultra.developerslife.util
 
 import android.view.View
 import android.widget.ImageView
@@ -6,6 +6,7 @@ import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import ru.maxultra.developerslife.R
 import ru.maxultra.developerslife.ui.gifpage.GifApiStatus
 
 @BindingAdapter("imageUrl")
